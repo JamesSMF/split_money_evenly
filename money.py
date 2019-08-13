@@ -16,6 +16,7 @@ def main():
          people_string = re.sub("[^A-Za-z]", " ", people_string)
          people_list = people_string.split()
 
+         # create new guys in people_total
          for guy in people_list:
             if guy not in people_total:      # new guy
                people_total[guy] = dict()    # build a new pair
@@ -27,9 +28,7 @@ def main():
                      people_total[other_motherfuckers][guy] = 0
 
          # this is irrelevant to the program, but just for human readibility
-         print("Please enter event name:")
-         event = raw_input()
-
+         event = raw_input("Please enter event name:")
          print("\n current event: " + event + "     number of people: " + str(len(people_list)))
 
          # detailed transactions
@@ -37,23 +36,27 @@ def main():
          while(not trans_flag):
             trans_flag = detailed_transaction(trans_flag, people_list)
 
+      # show result
       elif(command=="result" or command=="Result" or command=="r" or command=="R"):
          final_calculation()
       else:
          print("Please enter either \"new event\" or \"q\" or \"result\"")
 
+# if somebody transfer some money to another guy... (among those guys in the list)
 def transfer(sender, receiver, amount):
    global people_total
    people_total[receiver][sender] += int(amount)
 
+# if somebody pays...
 def pay(person, amount, people_list):
    global people_total
    owe_list = people_list[:]
-   owe_list.remove(person)
+   owe_list.remove(person)             # this guy doesn't own himself/herself
    share_amount = float(amount) / len(people_list)
    for guy in owe_list:
       people_total[guy][person] += share_amount
 
+# detailed_transaction :: Bool -> List -> Bool
 def detailed_transaction(trans_flag, people_list):
    user_trans = raw_input(">>> ")
    ut_list = user_trans.split()
@@ -68,11 +71,12 @@ def detailed_transaction(trans_flag, people_list):
       print("Please enter valid operations. (See README.md)")
       return False
 
-   if(flag_transfer):
-      transfer(ut_list[0], ut_list[2], ut_list[3])
-   elif(flag_pay):
-      pay(ut_list[0], ut_list[2], people_list)
-   else:
+   try:
+      if(flag_transfer):
+         transfer(ut_list[0], ut_list[2], ut_list[3])
+      elif(flag_pay):
+         pay(ut_list[0], ut_list[2], people_list)
+   except:
       print("Syntax error: please refer to README.md for detailed instructions.")
 
    return False
