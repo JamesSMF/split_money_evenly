@@ -15,7 +15,6 @@ def main():
          people_string = raw_input()
          people_string = re.sub("[^A-Za-z]", " ", people_string)
          people_list = people_string.split()
-         number_people = len(people_list)
 
          for guy in people_list:
             if guy not in people_total:      # new guy
@@ -31,7 +30,7 @@ def main():
          print("Please enter event name:")
          event = raw_input()
 
-         print("\n current event: " + event + "     number of people: " + str(number_people))
+         print("\n current event: " + event + "     number of people: " + str(len(people_list)))
 
          # detailed transactions
          trans_flag = False
