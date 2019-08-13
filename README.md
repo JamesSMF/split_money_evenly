@@ -1,6 +1,6 @@
 # Divide_the_shit_equally
 
-### This light-weight command line applet allows you to calculate money stuffs easily.
+## This light-weight command line applet allows you to calculate money stuffs easily.
 
 Have you ever encountered such a situation:
 
@@ -10,6 +10,75 @@ You folks want to divide the money equally but it seems so freakingly involved t
 
 
 
-#### Don't worry
+### Don't worry
 
-**Divide_the_shit_equally** cames to help.
+**Divide_the_shit_equally** comes to help.
+
+
+
+# Basic Usage
+
+run
+
+```bash
+python money.py
+```
+
+to start the program.
+
+
+
+*Note: there is no database for the program. So each time you run the program, all the previous datas are cleared.*
+
+
+
+## New Event
+
+Type "New event" or "new event" or simply "ne" to create a new event. <br>
+
+Then, the program will prompt the user to enter people's names. You can split names by any character you like, but **not English letters**. <br>
+
+After that, enter the event name. For example, "A Fabulous day". <br>
+
+When you see
+
+```bash
+>>>
+```
+
+at the beginning of the line, you have successfully entered "event mode"
+
+
+
+### Event Mode
+
+#### Basic syntax
+
+* \<person> trans \<person> \<amount of money> 
+* \<person> pay \<amount of money>
+
+Feel free to make those verbs gramatically correct, but please try not to change the basic structure of the syntax.<br>
+
+Enter "q" or "Q" to quit event mode and go back to normal mode.
+
+
+
+## Result
+
+When you type "result" or "Result", the program will enter its calculation process and soon return the final result.<br>
+
+The result is normally in this form:
+
+\<name> {\<person>: \<amount of money>, \<person>: \<amount of money>, ... }
+
+...
+
+
+
+\<name> is the person who should transfer \<amount of money> to  \<person>.
+
+
+
+## Q
+
+Enter "Q" or "q" to exit the program cleanly.
