@@ -6,7 +6,7 @@ Have you ever encountered such a situation:
 
 You, Allen, Alex, and Lily had a fantastic day. However, you paid for the lunch, Allen paid for the Uber ride, Alex booked four movie tickets online for Avengers 5, and Lily transfered Allen 40 bucks mistakenly. <br>
 
-You folks want to divide the money equally but it seems so freakingly involved to get a correct amount of money to whom each one should transfer. Probably James, the guy who is super frigging good at maths, will also be stuck by this problem… for 30 seconds. <br>
+You folks want to divide the money equally but it seems so freakingly involved to get a correct amount of money to whom each one should transfer. Probably even James, the guy who is super frigging good at maths, will also be stuck by this problem… for 30 seconds. <br>
 
 
 
