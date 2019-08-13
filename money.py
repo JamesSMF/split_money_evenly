@@ -64,7 +64,7 @@ def detailed_transaction(trans_flag, people_list):
 
    try:
       flag_transfer = (ut_list[1]=="T" or ut_list[1]=='t' or re.search("Trans", ut_list[1]) or re.search("trans", ut_list[1]) or ut_list[1]=="->")
-      flag_pay = (ut_list[1]=="P" or ut_list[1]=="p" or re.search("Pay", ut_list[1]) or re.search("pay", ut_list[1]))
+      flag_pay = (ut_list[1]=="P" or ut_list[1]=="p" or re.search("Pay", ut_list[1]) or re.search("pay", ut_list[1]) or ut_list[1]=="paid")
    except:
       print("Please enter valid operations. (See README.md)")
       return False
