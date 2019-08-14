@@ -15,7 +15,7 @@ You folks want to divide the money equally but it seems so freakingly involved t
 **Divide_the_shit_equally** comes to help.
 
 
-
+<br>
 
 
 # How do I install it?
@@ -53,14 +53,14 @@ You folks want to divide the money equally but it seems so freakingly involved t
 
 **If you know how to use spotlight search:**
 
-   Press command + <space> and type "Divide_the_shit_equally" (without quotation marks) and press enter.
+   Press command + \<space> and type "Divide_the_shit_equally" (without quotation marks) and press enter.
 
 **else:**
 
    Open the Finder, and go to Downloads -> Divide_the_shit_equally-master. Click the Divide_the_shit_equally app to run it.
 
 
-
+<br>
 
 
 # Basic Usage
