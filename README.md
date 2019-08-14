@@ -15,37 +15,39 @@ You folks want to divide the money equally but it seems so freakingly involved t
 **Divide_the_shit_equally** comes to help.
 
 
-
+<br>
 
 
 # How do I install it?
 
 ## For programmers
 
-open terminal (or your favorite command line tool)
+1. open terminal (or your favorite command line tool)
 
-run  $ git clone git@github.com:JamesSMF/divide_the_shit_equally.git
+2. run ``` $ git clone git@github.com:JamesSMF/divide_the_shit_equally.git ```
 
-run money.py inside the git directory diectly.
+3. run 
+```python money.py ```
+inside the git directory diectly. (in python 2)
 
 
 
 ## For non-programmers
 
-Prepare a mac, and make sure you have python 2 installed since this program is written in python 2. 
+1. Prepare a mac, and make sure you have python 2 installed since this program is written in python 2. 
 
-click the green button "clone or download"
-
-
+2. Click the green button "clone or download"
 
 
-Click **Download ZIP**
 
-Open System Preference -> Security & Privacy
 
-Click the small lock and enter your password (Do I seem like a fraud…? Trust me tho lol.)
+3. Click **Download ZIP**
 
-Click the small plus sign and select Downloads -> Divide_the_shit_equally-master -> Divide_the_shit_equally
+4. Open **System Preference -> Security & Privacy**
+
+5. Click the small lock and enter your password (Do I seem like a fraud…? Trust me tho lol.)
+
+6. Click the small plus sign and select Downloads -> Divide_the_shit_equally-master -> Divide_the_shit_equally
 
 
 
@@ -53,14 +55,14 @@ Click the small plus sign and select Downloads -> Divide_the_shit_equally-master
 
 **If you know how to use spotlight search:**
 
-   Press command + <space> and type "Divide_the_shit_equally" (without quotation marks) and press enter.
+   Press command + \<space> and type "Divide_the_shit_equally" (without quotation marks) and press enter.
 
 **else:**
 
    Open the Finder, and go to Downloads -> Divide_the_shit_equally-master. Click the Divide_the_shit_equally app to run it.
 
 
-
+<br>
 
 
 # Basic Usage
