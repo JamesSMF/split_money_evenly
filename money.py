@@ -1,6 +1,47 @@
 import re
+import sys
 
 def main():
+   if(len(sys.argv)==1):
+      interactiveMode()
+   else:                                 # File input mode
+      try:
+         with open(sys.argv[1], "r") as f:
+            newEvent = False             # check for syntax
+            people_list = list()
+            for line in f:
+               list_line = line.split()
+               if(len(list_line)==0):   # ignore empty lines
+                  continue
+               if(re.search("Event", list_line[0]) or re.search("event", list_line[0])):
+                  event_name = list_line[1:]
+                  newEvent = True
+               elif(re.search("People", list_line[0]) or re.search("people", list_line[0])):
+                  if(newEvent!=True):
+                     print("Syntax Error: People names are declared before creating a new event.")
+                     break
+
+                  people_list = list_line[1:]
+                  new_guy(people_list)      # add new guys to people_total
+               elif(re.search("result", list_line[0]) or re.search("Result", list_line[0])):
+                  final_calculation()
+               else:
+                  if(len(people_list)<1):
+                     print("Syntax error: People's names undeclared.")
+                     break
+
+                  trans_flag = False
+                  trans_flag = detailed_transaction_file(trans_flag, people_list, line.strip())
+                  if(trans_flag==True):
+                     print("At line: " + line)
+                     break
+                  newEvent = False
+
+            f.close()
+      except:
+         print("Please run the program with correct form of arguments.")
+
+def interactiveMode():
    global people_total                # global variable
    while(True):
       # get user input
@@ -15,17 +56,7 @@ def main():
          people_string = raw_input()
          people_string = re.sub("[^A-Za-z]", " ", people_string)
          people_list = people_string.split()
-
-         # create new guys in people_total
-         for guy in people_list:
-            if guy not in people_total:      # new guy
-               people_total[guy] = dict()    # build a new pair
-               other_mfs = people_list[:]
-               other_mfs.remove(guy)         # a list of people except this guy
-               for other_motherfuckers in other_mfs:
-                  people_total[guy][other_motherfuckers] = 0
-                  if(other_motherfuckers in people_total):
-                     people_total[other_motherfuckers][guy] = 0
+         new_guy(people_list)
 
          # this is irrelevant to the program, but just for human readibility
          event = raw_input("Please enter event name:")
@@ -34,7 +65,8 @@ def main():
          # detailed transactions
          trans_flag = False
          while(not trans_flag):
-            trans_flag = detailed_transaction(trans_flag, people_list)
+            user_trans = raw_input(">>> ")
+            trans_flag = detailed_transaction(trans_flag, people_list, user_trans)
 
       # show result
       elif(command=="result" or command=="Result" or command=="r" or command=="R"):
@@ -56,9 +88,34 @@ def pay(person, amount, people_list):
    for guy in owe_list:
       people_total[guy][person] += share_amount
 
+# False: continue the program
+# True: throw out an error
+def detailed_transaction_file(trans_flag, people_list, user_trans):
+   ut_list = user_trans.split()
+
+   if(user_trans=="q" or user_trans=="Q"):
+      return False
+
+   try:
+      flag_transfer = (ut_list[1]=="T" or ut_list[1]=='t' or re.search("Trans", ut_list[1]) or re.search("trans", ut_list[1]) or ut_list[1]=="->")
+      flag_pay = (ut_list[1]=="P" or ut_list[1]=="p" or re.search("Pay", ut_list[1]) or re.search("pay", ut_list[1]) or ut_list[1]=="paid")
+   except:
+      print("Syntax error: \"pay\" or \"trans\" unstated.")
+      return True
+
+   try:
+      if(flag_transfer):
+         transfer(ut_list[0], ut_list[2], ut_list[3])
+      elif(flag_pay):
+         pay(ut_list[0], ut_list[2], people_list)
+   except:
+      print("Syntax error: line argument error")
+      return True
+
+   return False
+
 # detailed_transaction :: Bool -> List -> Bool
-def detailed_transaction(trans_flag, people_list):
-   user_trans = raw_input(">>> ")
+def detailed_transaction(trans_flag, people_list, user_trans):
    ut_list = user_trans.split()
 
    if(user_trans=="q" or user_trans=="Q"):
@@ -80,6 +137,19 @@ def detailed_transaction(trans_flag, people_list):
       print("Syntax error: please refer to README.md for detailed instructions.")
 
    return False
+
+# create new guys in people_total
+def new_guy(people_list):
+   global people_total
+   for guy in people_list:
+      if guy not in people_total:      # new guy
+         people_total[guy] = dict()    # build a new pair
+         other_mfs = people_list[:]
+         other_mfs.remove(guy)         # a list of people except this guy
+         for other_motherfuckers in other_mfs:
+            people_total[guy][other_motherfuckers] = 0
+            if(other_motherfuckers in people_total):
+               people_total[other_motherfuckers][guy] = 0
 
 def final_calculation():
    global people_total
