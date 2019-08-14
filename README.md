@@ -22,13 +22,45 @@ You folks want to divide the money equally but it seems so freakingly involved t
 
 ### For programmers
 
-open terminal
+open terminal (or your favorite command line tool)
 
 run  $ git clone git@github.com:JamesSMF/divide_the_shit_equally.git
+
+run money.py inside the git directory diectly.
 
 
 
 ## For non-programmers
+
+Prepare a mac
+
+click the green button "clone or download"
+
+![Screen Shot 2019-08-14 at 6.55.48 PM](/Users/liguangyao/Desktop/Screen Shot 2019-08-14 at 6.55.48 PM.png)
+
+
+
+Click **Download ZIP**
+
+Open System Preference -> Security & Privacy
+
+Click the small lock and enter your password (Do I seem like a fraud…? Trust me tho lol.)
+
+![Screen Shot 2019-08-14 at 6.57.33 PM](/Users/liguangyao/Desktop/Screen Shot 2019-08-14 at 6.57.33 PM.png)
+
+Click the small plus sign and select Downloads -> Divide_the_shit_equally-master -> Divide_the_shit_equally
+
+
+
+(There are 2 options for the next step)
+
+**If you know how to use spotlight search:**
+
+   Press command + <space> and type "Divide_the_shit_equally" (without quotation marks) and press enter.
+
+**else:**
+
+   Open the Finder, and go to Downloads -> Divide_the_shit_equally-master. Click the Divide_the_shit_equally app to run it.
 
 
 
