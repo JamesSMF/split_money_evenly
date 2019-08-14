@@ -36,7 +36,6 @@ Prepare a mac
 
 click the green button "clone or download"
 
-![Screen Shot 2019-08-14 at 6.55.48 PM](/Users/liguangyao/Desktop/Screen Shot 2019-08-14 at 6.55.48 PM.png)
 
 
 
@@ -45,8 +44,6 @@ Click **Download ZIP**
 Open System Preference -> Security & Privacy
 
 Click the small lock and enter your password (Do I seem like a fraud…? Trust me tho lol.)
-
-![Screen Shot 2019-08-14 at 6.57.33 PM](/Users/liguangyao/Desktop/Screen Shot 2019-08-14 at 6.57.33 PM.png)
 
 Click the small plus sign and select Downloads -> Divide_the_shit_equally-master -> Divide_the_shit_equally
 
