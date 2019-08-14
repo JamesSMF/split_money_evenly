@@ -1,0 +1,11 @@
+Event: A fantanstic day in San Fransisco
+People: Jack, Flora, Mely
+   Jack paid 40 bucks for lunch
+   Mely trans Jack 10 bucks
+   Flora paid 20 dollars for Uber
+
+Event: House rent
+People: James, George, Johanna
+   Johanna paid 3000 bucks for the rent
+   James paid 200 for garbage disposal fee
+   George trans James 30 bucks

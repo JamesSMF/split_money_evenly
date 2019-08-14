@@ -21,6 +21,9 @@ def main():
                      print("Syntax Error: People names are declared before creating a new event.")
                      break
 
+
+                  line = re.sub("[^A-Za-z]", " ", line)
+                  list_line = line.split()
                   people_list = list_line[1:]
                   new_guy(people_list)      # add new guys to people_total
                elif(re.search("result", list_line[0]) or re.search("Result", list_line[0])):
@@ -107,6 +110,7 @@ def detailed_transaction_file(trans_flag, people_list, user_trans):
       if(flag_transfer):
          transfer(ut_list[0], ut_list[2], ut_list[3])
       elif(flag_pay):
+         print(people_list)
          pay(ut_list[0], ut_list[2], people_list)
    except:
       print("Syntax error: line argument error")

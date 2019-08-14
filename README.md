@@ -6,14 +6,13 @@ Have you ever encountered such a situation:
 
 You, Allen, Alex, and Lily had a fantastic day. However, you paid for the lunch, Allen paid for the Uber ride, Alex booked four movie tickets online for Avengers 5, and Lily transfered Allen 40 bucks mistakenly. <br>
 
-You folks want to divide the money equally but it seems so freakingly involved to get a correct amount of money to whom each one should transfer. Probably even James, the guy who is super frigging good at maths, will also be stuck by this problem… for 30 seconds. <br>
+You folks want to split the money evenly but it seems so freakingly involved to get a correct amount of money to whom each one should transfer. Probably even James, the guy who is super frigging good at maths, will also be stuck by this problem… for 30 seconds. <br>
 
 
 
 ### Don't worry
 
 **Divide_the_shit_equally** comes to help.
-
 
 <br>
 
@@ -131,3 +130,41 @@ The result is normally in this form:
 ## Q
 
 Enter "Q" or "q" to exit the program cleanly.
+
+
+
+<br>
+
+
+
+# Version 1.2: File Mode
+
+The newly added feather allows the user to input a file.
+
+The basic syntax has not changed with some parts slightly different.
+
+<br>
+
+#### Here is an example file
+
+```
+Event: A fantanstic day in San Fransisco
+People: Jack, Flora, Mely
+   Jack paid 40 bucks for lunch
+   Mely trans Jack 10 bucks
+   Flora paid 20 dollars for Uber
+
+Event: House rent
+People: James, George, Johanna
+   Johanna paid 3000 bucks for the rent
+   James paid 200 for garbage disposal fee
+   George trans James 30 bucks
+   
+result
+```
+
+
+
+Indentations and empty lines are not necessary but good for readibility.
+
+Runnnig ``` python money.py <file name>``` will generate the result according to the content in the file.
