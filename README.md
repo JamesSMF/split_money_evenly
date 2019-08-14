@@ -32,7 +32,7 @@ run money.py inside the git directory diectly.
 
 ## For non-programmers
 
-Prepare a mac
+Prepare a mac, and make sure you have python 2 installed since this program is written in python 2. 
 
 click the green button "clone or download"
 
@@ -49,7 +49,7 @@ Click the small plus sign and select Downloads -> Divide_the_shit_equally-master
 
 
 
-(There are 2 options for the next step)
+### (There are 2 options for the next step)
 
 **If you know how to use spotlight search:**
 
