@@ -16,6 +16,24 @@ You folks want to divide the money equally but it seems so freakingly involved t
 
 
 
+
+
+# How do I install it?
+
+### For programmers
+
+open terminal
+
+run  $ git clone git@github.com:JamesSMF/divide_the_shit_equally.git
+
+
+
+## For non-programmers
+
+
+
+
+
 # Basic Usage
 
 run
