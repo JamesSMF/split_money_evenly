@@ -20,7 +20,7 @@ You folks want to divide the money equally but it seems so freakingly involved t
 
 # How do I install it?
 
-### For programmers
+## For programmers
 
 open terminal (or your favorite command line tool)
 
