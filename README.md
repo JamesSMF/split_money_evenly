@@ -24,10 +24,10 @@ You folks want to divide the money equally but it seems so freakingly involved t
 
 1. open terminal (or your favorite command line tool)
 
-2. run ``` bash $ git clone git@github.com:JamesSMF/divide_the_shit_equally.git ```
+2. run ``` $ git clone git@github.com:JamesSMF/divide_the_shit_equally.git ```
 
 3. run 
-``` bash python money.py ```
+```python money.py ```
 inside the git directory diectly. (in python 2)
 
 
