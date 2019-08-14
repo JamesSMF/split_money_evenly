@@ -139,7 +139,7 @@ Enter "Q" or "q" to exit the program cleanly.
 
 # Version 1.2: File Mode
 
-The newly added feather allows the user to input a file.
+The newly added feature allows the user to input a file.
 
 The basic syntax has not changed with some parts slightly different.
 
