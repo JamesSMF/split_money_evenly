@@ -27,13 +27,13 @@ You folks want to split the money evenly but it seems so freakingly involved to 
 
 3. run 
 ```python money.py ```
-inside the git directory diectly. (in python 2)
+inside the git directory diectly. (in python 3)
 
 
 
 ## For non-programmers
 
-1. Prepare a mac, and make sure you have python 2 installed since this program is written in python 2. 
+1. Prepare a mac, and make sure you have python 3 installed since this program is written in python 3. 
 
 2. Click the green button "clone or download"
 
@@ -168,3 +168,5 @@ result
 Indentations and empty lines are not necessary but good for readibility.
 
 Runnnig ``` python money.py <file name>``` will generate the result according to the content in the file.
+
+** Also, the language has been changed from python 2 to python 3 since python 2 is obviously stepping out of the stage. **

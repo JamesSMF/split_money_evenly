@@ -48,7 +48,7 @@ def interactiveMode():
    global people_total                # global variable
    while(True):
       # get user input
-      command = raw_input("Please enter command: ")
+      command = input("Please enter command: ")
 
       # analyse user's input
       if(command=='Q' or command=='q' or command=='exit'):                # quit the program
@@ -56,19 +56,19 @@ def interactiveMode():
       elif(command=="new event" or command=="NE" or command=="ne"):       # start a new event
          # get people's names
          print("Please enter all the guys' names in English, splited them with spaces or colons or whatever shit other than English letters you wanna use:")
-         people_string = raw_input()
+         people_string = input()
          people_string = re.sub("[^A-Za-z]", " ", people_string)
          people_list = people_string.split()
          new_guy(people_list)
 
          # this is irrelevant to the program, but just for human readibility
-         event = raw_input("Please enter event name:")
+         event = input("Please enter event name:")
          print("\n current event: " + event + "     number of people: " + str(len(people_list)))
 
          # detailed transactions
          trans_flag = False
          while(not trans_flag):
-            user_trans = raw_input(">>> ")
+            user_trans = input(">>> ")
             trans_flag = detailed_transaction(trans_flag, people_list, user_trans)
 
       # show result
