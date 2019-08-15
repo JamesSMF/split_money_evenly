@@ -173,9 +173,23 @@ def final_calculation():
    global people_total
    for sender in people_total:
       for receiver in people_total[sender]:
-         if(people_total[sender][receiver] >= people_total[receiver][sender]):    # counteract
-            people_total[sender][receiver] -= people_total[receiver][sender]
-            people_total[receiver][sender] = 0
+         for third_rec in people_total[receiver]:
+            if(people_total[receiver][third_rec]<=0):   # if the receiver does not owe this third guy money
+               continue                                 # proceed to the next guy
+            elif(third_rec in people_total[sender]):    # check if the third guy is their common friend
+               if(people_total[receiver][third_rec]<=people_total[sender][receiver]):
+                  people_total[sender][third_rec] += people_total[receiver][third_rec]
+                  people_total[sender][receiver] -= people_total[receiver][third_rec]
+                  people_total[receiver][third_rec] = 0
+               elif(people_total[receiver][third_rec]>people_total[sender][receiver]):
+                  people_total[sender][third_rec] += people_total[sender][receiver]
+                  people_total[receiver][third_rec] -= people_total[sender][receiver]
+                  people_total[sender][receiver] = 0
+
+         #  Version 1.2 and before
+         #  if(people_total[sender][receiver] >= people_total[receiver][sender]):    # counteract
+            #  people_total[sender][receiver] -= people_total[receiver][sender]
+            #  people_total[receiver][sender] = 0
 
    # finally we got there
    for folks in people_total:
@@ -187,6 +201,7 @@ def print_color(color, text):
 
 # global variables
 people_total = dict(dict())                # people : money
+# for color printing
 BLUE = '34m'
 OKGREEN = '92m'
 WARNONG = '93m'
