@@ -9,3 +9,5 @@ People: James, George, Johanna
    Johanna paid 3000 bucks for the rent
    James paid 200 for garbage disposal fee
    George trans James 30 bucks
+
+result

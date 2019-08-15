@@ -139,7 +139,7 @@ Enter "Q" or "q" to exit the program cleanly.
 
 # Version 1.2: File Mode
 
-The newly added feather allows the user to input a file.
+The newly added feature allows the user to input a file.
 
 The basic syntax has not changed with some parts slightly different.
 
@@ -168,5 +168,8 @@ result
 Indentations and empty lines are not necessary but good for readibility.
 
 Runnnig ``` python money.py <file name>``` will generate the result according to the content in the file.
+<<<<<<< HEAD
 
 ** Also, the language has been changed from python 2 to python 3 since python 2 is obviously stepping out of the stage. **
+=======
+>>>>>>> c0a6eda318990c050b7e6acf9593404e76cb7863
