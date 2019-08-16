@@ -91,15 +91,6 @@ def pay(person, amount, people_list):
    for guy in owe_list:
       people_total[guy][person] += share_amount
 
-# if someone earns... (opposite to pay)
-def earn(person, amount, people_list):
-   global people_total
-   owe_list = people_list[:]
-   owe_list.remove(person)             # this guy doesn't own himself/herself
-   share_amount = float(amount) / len(people_list)
-   for guy in owe_list:
-      people_total[guy][person] -= share_amount
-
 # False: continue the program
 # True: throw out an error
 def detailed_transaction_file(trans_flag, people_list, user_trans):
@@ -111,9 +102,8 @@ def detailed_transaction_file(trans_flag, people_list, user_trans):
    try:
       flag_transfer = (ut_list[1].lower()=="t" or re.search("trans", ut_list[1]) or ut_list[1]=="->")
       flag_pay = (ut_list[1].lower()=="p" or re.search("pay", ut_list[1]) or ut_list[1].lower()=="paid")
-      flag_earn = (ut_list[1].lower()=="earns" or ut_list[1].lower()=="e")
    except:
-      print(print_color(WARNONG,"Syntax error: \"pay\" or \"trans\" or \"earn\" unstated."))
+      print(print_color(WARNONG,"Syntax error: \"pay\" or \"trans\" unstated."))
       return True
 
    try:
@@ -121,8 +111,6 @@ def detailed_transaction_file(trans_flag, people_list, user_trans):
          transfer(ut_list[0], ut_list[2], ut_list[3])
       elif(flag_pay):
          pay(ut_list[0], ut_list[2], people_list)
-      elif(flag_earn):
-         earn(ut_list[0], ut_list[2], people_list)
    except:
       print(print_color(WARNONG,"Syntax error: line argument error"))
       return True
@@ -139,7 +127,6 @@ def detailed_transaction(trans_flag, people_list, user_trans):
    try:
       flag_transfer = (ut_list[1].lower()=="t" or re.search("trans", ut_list[1]) or ut_list[1]=="->")
       flag_pay = (ut_list[1].lower()=="p" or re.search("pay", ut_list[1]) or ut_list[1].lower()=="paid")
-      flag_earn = (ut_list[1].lower()=="earns" or ut_list[1].lower()=="e")
    except:
       print(print_color(WARNONG,"Please enter valid operations. (See README.md)"))
       return False
@@ -149,8 +136,6 @@ def detailed_transaction(trans_flag, people_list, user_trans):
          transfer(ut_list[0], ut_list[2], ut_list[3])
       elif(flag_pay):
          pay(ut_list[0], ut_list[2], people_list)
-      elif(flag_earn):
-         earn(ut_list[0], ut_list[2], people_list)
    except:
       print(print_color(WARNONG,"Syntax error: please refer to README.md for detailed instructions."))
 
