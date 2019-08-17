@@ -10,6 +10,7 @@ def main():
             newEvent = False             # check for syntax
             people_list = list()
             for line in f:
+               line = re.sub("[^A-za-z0-9]", " ", line)
                list_line = line.split()
                if(len(list_line)==0):   # ignore empty lines
                   continue
@@ -20,26 +21,23 @@ def main():
                   if(newEvent!=True):
                      print(print_color(WARNONG,"Syntax Error: People names are declared before creating a new event."))
                      break
-
-
                   line = re.sub("[^A-Za-z]", " ", line)
                   list_line = line.split()
                   people_list = list_line[1:]
                   new_guy(people_list)      # add new guys to people_total
-               elif(re.search("result", list_line[0]) or re.search("Result", list_line[0])):
+               elif(re.search("result", list_line[0].lower()) or list_line[0].lower()=="r"):
                   final_calculation()
                else:
                   if(len(people_list)<1):
                      print(print_color(WARNONG,"Syntax error: People's names undeclared."))
                      break
-
                   trans_flag = False
                   trans_flag = detailed_transaction_file(trans_flag, people_list, line.strip())
                   if(trans_flag==True):
                      print("At line: " + line)
                      break
                   newEvent = False
-
+            # EOF
             f.close()
       except:
          print("Please run the program with correct form of arguments.")
@@ -177,8 +175,12 @@ def final_calculation():
             #  people_total[receiver][sender] = 0
 
    # finally we got there
+   # TODO: round the output
+   # This is hard, I'll do this shit later
    for folks in people_total:
       print(print_color(WHITE,folks + " " + str(people_total[folks])))
+      #  for guys in people_total[folks]:
+         #  print(print_color(WHITE, round(people_total[folks][guys], 2)), end="")
 
 def print_color(color, text):
    colored_text = f"\033[{color}{text}\033[00m"
