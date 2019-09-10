@@ -32,7 +32,7 @@ def main():
                      print(print_color(WARNONG,"Syntax error: People's names undeclared."))
                      break
                   trans_flag = False
-                  trans_flag = detailed_transaction_file(trans_flag, people_list, line.strip())
+                  trans_flag = detailed_transaction_file(people_list, line.strip())
                   if(trans_flag==True):
                      print("At line: " + line)
                      break
@@ -67,7 +67,7 @@ def interactiveMode():
          trans_flag = False
          while(not trans_flag):
             user_trans = input(">>> ")
-            trans_flag = detailed_transaction(trans_flag, people_list, user_trans)
+            trans_flag = detailed_transaction(people_list, user_trans)
 
       # show result
       elif(command=="result" or command=="Result" or command=="r" or command=="R"):
@@ -91,7 +91,7 @@ def pay(person, amount, people_list):
 
 # False: continue the program
 # True: throw out an error
-def detailed_transaction_file(trans_flag, people_list, user_trans):
+def detailed_transaction_file(people_list, user_trans):
    ut_list = user_trans.split()
 
    if(user_trans=="q" or user_trans=="Q"):
@@ -116,7 +116,7 @@ def detailed_transaction_file(trans_flag, people_list, user_trans):
    return False
 
 # detailed_transaction :: Bool -> List -> Bool
-def detailed_transaction(trans_flag, people_list, user_trans):
+def detailed_transaction(people_list, user_trans):
    ut_list = user_trans.split()
 
    if(user_trans=="q" or user_trans=="Q"):
