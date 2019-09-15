@@ -52,16 +52,16 @@ def interactiveMode():
       if(command=='Q' or command=='q' or command=='exit'):                # quit the program
          break
       elif(command=="new event" or command=="NE" or command=="ne"):       # start a new event
+         # this is irrelevant to the program, but just for human readibility
+         event = input("Please enter event name: ")
+         print("\n current event: " + event + "     number of people: " + str(len(people_list)))
+
          # get people's names
          print("Please enter all the guys' names in English, splited them with spaces or colons or whatever shit other than English letters you wanna use:")
          people_string = input()
          people_string = re.sub("[^A-Za-z]", " ", people_string)
          people_list = people_string.split()
          new_guy(people_list)
-
-         # this is irrelevant to the program, but just for human readibility
-         event = input("Please enter event name: ")
-         print("\n current event: " + event + "     number of people: " + str(len(people_list)))
 
          # detailed transactions
          trans_flag = False
