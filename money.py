@@ -123,6 +123,11 @@ def detailed_transaction(people_list, user_trans):
    if(user_trans=="q" or user_trans=="Q"):
       return True
 
+   flag_transfer = flag_pay = False   # initialize
+   if(user_trans=="result" or user_trans=="Result" or user_trans=="R" or user_trans=="r"):
+      final_calculation()
+      return False
+
    try:
       flag_transfer = (ut_list[1].lower()=="t" or re.search("trans", ut_list[1]) or ut_list[1]=="->")
       flag_pay = (ut_list[1].lower()=="p" or re.search("pay", ut_list[1]) or ut_list[1].lower()=="paid")

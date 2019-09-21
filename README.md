@@ -176,3 +176,7 @@ Runnnig ``` python money.py <file name>``` will generate the result according to
 # Version 2.0: Optimized the algorithm
 
 The overall algorithm has been more complicated and therefore the running time prolonged. However, this improvement reduces most of redundant transfers.
+
+# Version 2.1: Fixed some algorithm problems
+
+This version merges version 1.0 algorithm and version 2.0 algorithm to make the algorithm more accurate so that it reduces more redundant transactions.
