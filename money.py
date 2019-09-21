@@ -54,7 +54,6 @@ def interactiveMode():
       elif(command=="new event" or command=="NE" or command=="ne"):       # start a new event
          # this is irrelevant to the program, but just for human readibility
          event = input("Please enter event name: ")
-         print("\n current event: " + event + "     number of people: " + str(len(people_list)))
 
          # get people's names
          print("Please enter all the guys' names in English, splited them with spaces or colons or whatever shit other than English letters you wanna use:")
@@ -62,6 +61,8 @@ def interactiveMode():
          people_string = re.sub("[^A-Za-z]", " ", people_string)
          people_list = people_string.split()
          new_guy(people_list)
+
+         print("\n current event: " + event + "     number of people: " + str(len(people_list)))
 
          # detailed transactions
          trans_flag = False
@@ -156,6 +157,10 @@ def final_calculation():
    global people_total
    for sender in people_total:
       for receiver in people_total[sender]:
+         # check if two people needs transfer mutually
+         if(people_total[sender][receiver] >= people_total[receiver][sender]):    # counteract
+            people_total[sender][receiver] -= people_total[receiver][sender]
+            people_total[receiver][sender] = 0
          for third_rec in people_total[receiver]:
             if(people_total[receiver][third_rec]<=0):   # if the receiver does not owe this third guy money
                continue                                 # proceed to the next guy
@@ -169,18 +174,12 @@ def final_calculation():
                   people_total[receiver][third_rec] -= people_total[sender][receiver]
                   people_total[sender][receiver] = 0
 
-         #  Version 1.2 and before
-         #  if(people_total[sender][receiver] >= people_total[receiver][sender]):    # counteract
-            #  people_total[sender][receiver] -= people_total[receiver][sender]
-            #  people_total[receiver][sender] = 0
-
    # finally we got there
-   # TODO: round the output
-   # This is hard, I'll do this shit later
    for folks in people_total:
+      for k, v in people_total[folks].items():
+         people_total[folks][k] = round(v, 2)     # round the output
+
       print(print_color(WHITE,folks + " " + str(people_total[folks])))
-      #  for guys in people_total[folks]:
-         #  print(print_color(WHITE, round(people_total[folks][guys], 2)), end="")
 
 def print_color(color, text):
    colored_text = f"\033[{color}{text}\033[00m"
