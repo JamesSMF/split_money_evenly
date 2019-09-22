@@ -26,7 +26,7 @@ You folks want to split the money evenly but it seems so freakingly involved to 
 2. run ``` $ git clone git@github.com:JamesSMF/divide_the_shit_equally.git ```
 
 3. run 
-```python money.py ```
+```python3 money.py ```
 inside the git directory diectly. (in python 3)
 
 
@@ -69,7 +69,7 @@ inside the git directory diectly. (in python 3)
 run
 
 ```bash
-python money.py
+python3 money.py
 ```
 
 to start the program.
