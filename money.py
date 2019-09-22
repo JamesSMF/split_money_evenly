@@ -166,6 +166,9 @@ def final_calculation():
          if(people_total[sender][receiver] >= people_total[receiver][sender]):    # counteract
             people_total[sender][receiver] -= people_total[receiver][sender]
             people_total[receiver][sender] = 0
+         elif(people_total[sender][receiver] < people_total[receiver][sender]):
+            people_total[receiver][sender] -= people_total[sender][receiver]
+            people_total[sender][receiver] = 0
          for third_rec in people_total[receiver]:
             if(people_total[receiver][third_rec]<=0):   # if the receiver does not owe this third guy money
                continue                                 # proceed to the next guy
