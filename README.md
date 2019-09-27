@@ -1,4 +1,4 @@
-# Divide_the_shit_equally
+# split_money_evenly
 
 ## This light-weight command line applet allows you to calculate money stuffs easily.
 
@@ -12,7 +12,7 @@ You folks want to split the money evenly but it seems so freakingly involved to 
 
 ### Don't worry
 
-**Divide_the_shit_equally** comes to help.
+**split_money_evenly** comes to help.
 
 <br>
 
@@ -23,7 +23,7 @@ You folks want to split the money evenly but it seems so freakingly involved to 
 
 1. open terminal (or your favorite command line tool)
 
-2. run ``` $ git clone git@github.com:JamesSMF/divide_the_shit_equally.git ```
+2. run ``` $ git clone git@github.com:JamesSMF/split_money_evenly.git ```
 
 3. run 
 ```python3 money.py ```
@@ -46,7 +46,7 @@ inside the git directory diectly. (in python 3)
 
 5. Click the small lock and enter your password (Do I seem like a fraud…? Trust me tho lol.)
 
-6. Click the small plus sign and select Downloads -> Divide_the_shit_equally-master -> Divide_the_shit_equally
+6. Click the small plus sign and select Downloads -> split_money_evenly-master -> split_money_evenly
 
 
 
@@ -54,11 +54,11 @@ inside the git directory diectly. (in python 3)
 
 **If you know how to use spotlight search:**
 
-   Press command + \<space> and type "Divide_the_shit_equally" (without quotation marks) and press enter.
+   Press command + \<space> and type "split_money_evenly" (without quotation marks) and press enter.
 
 **else:**
 
-   Open the Finder, and go to Downloads -> Divide_the_shit_equally-master. Click the Divide_the_shit_equally app to run it.
+   Open the Finder, and go to Downloads -> split_money_evenly-master. Click the split_money_evenly app to run it.
 
 
 <br>
